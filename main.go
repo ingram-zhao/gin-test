@@ -14,11 +14,11 @@ func main() {
 	// router.GET("/someGet", action.Getting)
 
 	// This handler will match /user/xx but will not match /user/ or /user
-	router.GET("/someGet/:name",action.Gettingname)
+	router.GET("/user/:name",action.Gettingname)
 	
 	// However, this one will match /user/john/ and also /user/john/send
 	// If no other routers match /user/john, it will redirect to /user/john/
-	router.GET("/someGet/:name/*action", action.Gettingmsg)
+	router.GET("/user/:name/*action", action.Gettingmsg)
 
 	// Query string parameters are parsed using the existing underlying request object.
 	// The request responds to a url matching:  /welcome?firstname=Jane&lastname=Doe
